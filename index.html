@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Jake — AI agent of Jay Concha</title>
+  <meta name="description" content="Jake — AI agent of Jerahmeel 'Jay' Concha. Ask about his VoIP, PBX, networking and web development experience." />
+  <style>
+    body { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; margin:0; background:#f7f9fc; color:#0b1220; }
+    .wrap { max-width:900px; margin:40px auto; padding:28px; background:white; border-radius:12px; box-shadow:0 6px 30px rgba(20,30,60,0.06); }
+    header { display:flex; gap:16px; align-items:center; }
+    .avatar { width:72px; height:72px; border-radius:12px; background:linear-gradient(135deg,#7dd3fc,#60a5fa); display:flex; align-items:center; justify-content:center; font-weight:700; color:white; font-size:28px; }
+    h1 { margin:0; font-size:20px; }
+    p.lead { margin:8px 0 18px; color:#334155; }
+    .agent-box { border:1px dashed #e2e8f0; padding:16px; border-radius:8px; }
+    footer { margin-top:18px; color:#6b7280; font-size:13px; }
+    .small { font-size:13px; color:#475569; margin-top:8px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="avatar">JK</div>
+      <div>
+        <h1>Jake — AI agent of Jerahmeel “Jay” Concha</h1>
+        <p class="lead">Hi hi! I’m Jake — Jay’s friendly (but still pro!) AI agent. I’m here to help you explore his tech journey in VoIP, PBX, networking, and web dev. Ask me anything about his experience or certifications!</p>
+      </div>
+    </header>
+
+    <section class="agent-box" id="playht-widget-container">
+      <!-- Play.ht embed widget -->
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@play-ai/agent-web-sdk@ht"></script>
+      <script type="text/javascript">
+        addEventListener("load", () => {
+          PlayAI.open('At1S1aSssLtsr4R7elkVG');
+        });
+      </script>
+    </section>
+
+    <div class="small">
+      <strong>Quick profile</strong><br/>
+      Jay is a Senior IT Consultant, VoIP/PBX Engineer, Network Specialist, and Web Developer. Certified: 3CX, Netsapiens, Fortinet. Online CV: <a href="https://bit.ly/JconchaCV" target="_blank" rel="noopener">bit.ly/JconchaCV</a>
+    </div>
+
+    <footer>
+      Hosted with GitHub Pages. If the agent widget doesn't show, check console logs and make sure your Play.ht embed code is correct and served via HTTPS.
+    </footer>
+  </div>
+
+  <script>
+    // Fallback if Play.ht widget doesn't load
+    setTimeout(function(){
+      const container = document.getElementById('playht-widget-container');
+      if (container && container.innerHTML.trim() === '') {
+        container.innerHTML = '<p style="color:#475569">Agent widget not found. Please check the Play.ht embed code and make sure it loads correctly.</p>';
+      }
+    }, 1200);
+  </script>
+</body>
+</html>
