@@ -6,55 +6,100 @@
   <title>Jake — AI Agent</title>
   <meta name="description" content="Ask Jake, the AI agent of Jerahmeel 'Jay' Concha, about his professional experience.">
   <style>
+    /* Monogram color theme */
+    :root {
+      --primary-color: #7dd3fc; /* light blue from monogram */
+      --secondary-color: #60a5fa; /* darker blue */
+      --text-color: #0b1220;
+      --subtext-color: #334155;
+      --border-color: #e2e8f0;
+      --bg-color: #f7f9fc;
+    }
+
     body {
       font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial;
       margin: 0;
-      background: #f7f9fc;
+      background: var(--bg-color);
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
       min-height: 100vh;
-      color: #0b1220;
+      color: var(--text-color);
       padding: 40px 20px;
     }
+
+    /* Monogram at top */
     .logo {
       width: 120px;
       height: auto;
       margin-bottom: 20px;
     }
+
     h1 {
-      font-size: 24px;
+      font-size: 26px;
       margin-bottom: 12px;
       text-align: center;
+      color: var(--primary-color);
     }
+
     p {
       font-size: 16px;
-      color: #334155;
+      color: var(--subtext-color);
       text-align: center;
       margin-bottom: 30px;
       max-width: 600px;
     }
+
     .agent-container {
       margin-top: 20px;
       width: 100%;
       max-width: 800px;
-      border: 1px dashed #e2e8f0;
-      border-radius: 12px;
+      border: 2px solid var(--primary-color);
+      border-radius: 16px;
       padding: 16px;
       min-height: 400px;
+      background: white;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
     }
+
+    /* Avatar styling inside agent container */
+    .agent-avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      border: 2px solid var(--secondary-color);
+      margin-right: 12px;
+    }
+
+    .agent-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+    }
+
     footer {
       margin-top: 40px;
       font-size: 13px;
       color: #6b7280;
       text-align: center;
     }
+
+    a {
+      color: var(--primary-color);
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
-  <!-- Monogram at the top -->
-  <img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/22559abb-b0f1-4b8a-9de7-d9cd7ae3a178/ce059512-ec69-4866-ad23-bc1e3f21f6df/spa_(1).png?id=0d44831d-3fa7-4622-9629-b823e5ab57b8&width=250" 
+  <!-- Monogram -->
+  <img src="https://github.com/engrjakeconcha/aiagent/blob/main/spa_(1).webp?raw=true" 
        alt="Jay Concha Monogram" class="logo">
 
   <h1>Hi there! 👋</h1>
@@ -64,6 +109,14 @@
   </p>
 
   <div class="agent-container" id="playht-widget-container">
+    <div class="agent-header">
+      <img src="https://github.com/engrjakeconcha/aiagent/blob/main/WhatsApp%20Image%202025-11-26%20at%2021.25.12.jpeg" 
+           alt="Jake Avatar" class="agent-avatar">
+      <div>
+        <strong>Jake</strong><br>
+        AI Agent
+      </div>
+    </div>
     <!-- Play.ht AI agent will load here -->
   </div>
 
@@ -77,7 +130,7 @@
     addEventListener("load", () => {
       PlayAI.open('At1S1aSssLtsr4R7elkVG');
 
-      // Optional: send an initial greeting inside the agent
+      // Initial greeting inside the agent
       PlayAI.sendMessage("Hi! 👋 I'm Jake, Jay's AI agent. Ask me anything about his professional experience in VoIP, PBX, networking, or web development. I'm here to help!");
     });
   </script>
