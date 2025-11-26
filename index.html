@@ -61,15 +61,6 @@
       max-width: 600px;
     }
 
-    #retell-widget-container {
-      width: 100%;
-      max-width: 800px;
-      min-height: 400px;
-      border: 2px solid var(--primary-color);
-      border-radius: 16px;
-      margin: 20px auto;
-    }
-
     footer {
       margin-top: 40px;
       font-size: 13px;
@@ -100,15 +91,28 @@
     I’m Jake, the AI agent of Jerahmeel “Jay” Concha! Ask me anything about his professional experience in VoIP, PBX, networking, or web development. I’ll give you helpful answers right here in the chat!
   </p>
 
-  <!-- Retell Agent Container -->
-  <div id="retell-widget-container"></div>
-
   <footer>
     Thanks for visiting!<br>
     Contact Jay: 📧 <a href="mailto:jay_co9@protonmail.com">jay_co9@protonmail.com</a> | 🌐 CV: <a href="https://bit.ly/JconchaCV" target="_blank">bit.ly/JconchaCV</a>
   </footer>
 
-  <!-- Retell Embed Script -->
-  <script src="https://cdn.retell.ai/embed.js" data-agent-id="agent_4b4009220267df0491cf8065da"></script>
+  <!-- Retell Chat Widget -->
+  <script
+    id="retell-widget"
+    src="https://dashboard.retellai.com/retell-widget.js"
+    type="module"
+    data-public-key="public_key_499b26e2eac201c4695eb"
+    data-agent-id="agent_4b4009220267df0491cf8065da"
+    data-agent-version="latest"
+    data-title="JakeAi"
+    data-logo-url="https://github.com/engrjakeconcha/aiagent/blob/main/WhatsApp%20Image%202025-11-26%20at%2021.25.12.jpeg?raw=true"
+    data-color="#60a5fa"
+    data-bot-name="JakeAi"
+    data-popup-message="Ask me about Jay!"
+    data-show-ai-popup="true"
+    data-show-ai-popup-time="5"
+    data-auto-open="false"
+    data-dynamic='{"key": "value"}'
+  ></script>
 </body>
 </html>
