@@ -18,6 +18,11 @@
       color: #0b1220;
       padding: 40px 20px;
     }
+    .logo {
+      width: 120px;
+      height: auto;
+      margin-bottom: 20px;
+    }
     h1 {
       font-size: 24px;
       margin-bottom: 12px;
@@ -28,46 +33,10 @@
       color: #334155;
       text-align: center;
       margin-bottom: 30px;
+      max-width: 600px;
     }
-    .mic-button {
-      width: 72px;
-      height: 72px;
-      border-radius: 50%;
-      background: linear-gradient(135deg,#7dd3fc,#60a5fa);
-      border: none;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 32px;
-      color: white;
-      cursor: pointer;
-      transition: transform 0.2s ease;
-      position: relative;
-    }
-    .mic-button:hover {
-      transform: scale(1.1);
-    }
-    /* pulse animation */
-    .recording::after {
-      content: '';
-      position: absolute;
-      top: -12px;
-      left: -12px;
-      width: 96px;
-      height: 96px;
-      border-radius: 50%;
-      background: rgba(125,211,252,0.4);
-      animation: pulse 1s infinite;
-      z-index: 0;
-    }
-    @keyframes pulse {
-      0% { transform: scale(0.8); opacity: 0.6; }
-      50% { transform: scale(1.2); opacity: 0.2; }
-      100% { transform: scale(0.8); opacity: 0.6; }
-    }
-
     .agent-container {
-      margin-top: 40px;
+      margin-top: 20px;
       width: 100%;
       max-width: 800px;
       border: 1px dashed #e2e8f0;
@@ -84,9 +53,15 @@
   </style>
 </head>
 <body>
-  <h1>Hey! 👋</h1>
-  <p>Ask my AI agent about my professional experience! Click the mic button below to start.</p>
-  <button class="mic-button" id="start-mic">🎤</button>
+  <!-- Monogram at the top -->
+  <img src="https://prod-files-secure.s3.us-west-2.amazonaws.com/22559abb-b0f1-4b8a-9de7-d9cd7ae3a178/ce059512-ec69-4866-ad23-bc1e3f21f6df/spa_(1).png?id=0d44831d-3fa7-4622-9629-b823e5ab57b8&width=250" 
+       alt="Jay Concha Monogram" class="logo">
+
+  <h1>Hi there! 👋</h1>
+  <p>
+    I’m Jake, the AI agent of Jerahmeel “Jay” Concha! Ask me anything about his professional experience in VoIP, PBX, networking, or web development.  
+    I’ll give you helpful answers right here in the chat!
+  </p>
 
   <div class="agent-container" id="playht-widget-container">
     <!-- Play.ht AI agent will load here -->
@@ -99,31 +74,11 @@
   <!-- Play.ht embed code -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@play-ai/agent-web-sdk@ht"></script>
   <script type="text/javascript">
-    let agentLoaded = false;
-    let isRecording = false;
-
     addEventListener("load", () => {
       PlayAI.open('At1S1aSssLtsr4R7elkVG');
-      agentLoaded = true;
-    });
 
-    const micButton = document.getElementById("start-mic");
-
-    micButton.addEventListener("click", () => {
-      if (!agentLoaded) {
-        alert("AI agent is still loading, please wait a moment.");
-        return;
-      }
-
-      if (!isRecording) {
-        PlayAI.startRecording();
-        micButton.classList.add("recording");
-        isRecording = true;
-      } else {
-        PlayAI.stopRecording();
-        micButton.classList.remove("recording");
-        isRecording = false;
-      }
+      // Optional: send an initial greeting inside the agent
+      PlayAI.sendMessage("Hi! 👋 I'm Jake, Jay's AI agent. Ask me anything about his professional experience in VoIP, PBX, networking, or web development. I'm here to help!");
     });
   </script>
 </body>
