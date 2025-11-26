@@ -11,7 +11,6 @@
       --secondary-color: #60a5fa; /* monogram darker blue */
       --text-color: #0b1220;
       --subtext-color: #334155;
-      --border-color: #e2e8f0;
       --bg-color: #f7f9fc;
     }
 
@@ -28,7 +27,6 @@
       padding: 40px 20px;
     }
 
-    /* Header with monogram + avatar */
     .header {
       display: flex;
       align-items: center;
@@ -37,13 +35,13 @@
     }
 
     .logo {
-      width: 120px;
+      width: 140px;
       height: auto;
     }
 
     .agent-avatar {
-      width: 64px;
-      height: 64px;
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
       border: 2px solid var(--secondary-color);
     }
@@ -63,19 +61,13 @@
       max-width: 600px;
     }
 
-    .agent-container {
-      margin-top: 20px;
+    #retell-widget-container {
       width: 100%;
       max-width: 800px;
+      min-height: 400px;
       border: 2px solid var(--primary-color);
       border-radius: 16px;
-      padding: 16px;
-      min-height: 400px;
-      background: white;
-      display: flex;
-      flex-direction: column;
-      align-items: stretch;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+      margin: 20px auto;
     }
 
     footer {
@@ -105,27 +97,18 @@
 
   <h1>Hi there! 👋</h1>
   <p>
-    I’m Jake, the AI agent of Jerahmeel “Jay” Concha! Ask me anything about his professional experience in VoIP, PBX, networking, or web development.  
-    I’ll give you helpful answers right here in the chat!
+    I’m Jake, the AI agent of Jerahmeel “Jay” Concha! Ask me anything about his professional experience in VoIP, PBX, networking, or web development. I’ll give you helpful answers right here in the chat!
   </p>
 
-  <div class="agent-container" id="playht-widget-container">
-    <!-- Play.ht AI agent will load here -->
-  </div>
+  <!-- Retell Agent Container -->
+  <div id="retell-widget-container"></div>
 
   <footer>
-    Hosted on GitHub Pages. Online CV: <a href="https://bit.ly/JconchaCV" target="_blank">bit.ly/JconchaCV</a>
+    Thanks for visiting!<br>
+    Contact Jay: 📧 <a href="mailto:jay_co9@protonmail.com">jay_co9@protonmail.com</a> | 🌐 CV: <a href="https://bit.ly/JconchaCV" target="_blank">bit.ly/JconchaCV</a>
   </footer>
 
-  <!-- Play.ht embed code -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@play-ai/agent-web-sdk@ht"></script>
-  <script type="text/javascript">
-    addEventListener("load", () => {
-      PlayAI.open('At1S1aSssLtsr4R7elkVG');
-
-      // Initial greeting inside the agent
-      PlayAI.sendMessage("Hi! 👋 I'm Jake, Jay's AI agent. Ask me anything about his professional experience in VoIP, PBX, networking, or web development. I'm here to help!");
-    });
-  </script>
+  <!-- Retell Embed Script -->
+  <script src="https://cdn.retell.ai/embed.js" data-agent-id="agent_4b4009220267df0491cf8065da"></script>
 </body>
 </html>
